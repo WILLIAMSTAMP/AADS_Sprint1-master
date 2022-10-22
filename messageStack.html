@@ -1,0 +1,153 @@
+ <!-- Sprint 1 for algorithms class
+ Due October 31st 2022
+ Group members: Chris, Mark, William, Neil-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack Form</title>
+  </head>
+  <body>
+    <nav id="navBar">
+      <h2>Welcome Back Operative</h2>
+      <h3 style="display: flex; justify-content: center;">Please prepare your secured message Stack below!</h3>
+    </nav>
+    <form id="form" action="/requestStack">
+      <div class="field">
+        <label for="username">Message:</label>
+        <input
+          type="text"
+          name="message"
+          id="message"
+          placeholder="Enter Your Message"
+        />
+      </div>
+      <div class="field">
+        <label for="username">Agent ID:</label>
+        <input
+          type="text"
+          name="agentID"
+          id="agentID"
+          placeholder="Enter Your ID"
+        />
+      </div>
+      <div class="field">
+        <label for="username">Structure ID:</label>
+        <input
+          type="text"
+          name="structureID"
+          id="structureID"
+          placeholder="Current Location Number"
+        />
+      </div>
+      <div class="field">
+        <button type="submit" id="btn">Send</button>
+      </div>
+    </form>
+    <style>
+      #navBar{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.425);
+        padding-bottom: 10px;
+        padding-top: 10px;
+        display: grid;
+        justify-content: center;
+      }
+      h1{
+        display: flex;
+        justify-content: center;
+        color: red;
+        background-color: black;
+        
+      }
+      h2{
+        display: flex;
+        justify-content: center;
+        color: #ee3e3e;
+        background-color: black;
+      }
+
+      h3{
+        display: flex;
+        justify-content: center;
+        color: #ee3e3e;
+        background-color: black;
+      }
+      form{
+        display: flex;
+        justify-content: center;
+        margin-top: 350px;
+        margin-left: 600px;
+        margin-right: 600px;
+        padding-bottom: 30px;
+        border-radius: 10px;
+        background-image: url(https://pixahive.com/wp-content/uploads/2021/02/black-carbon-fiber-abstract-background-wallpaper-325722-pixahive.jpg);
+        background-size: cover;
+        padding-top: 25px;
+      }
+      
+      body{
+        background-image: url(https://www.spy-games.com/wp-content/uploads/2016/12/cia-wallpaper-free-Download7-1.jpg);
+        background-size: cover;
+      }
+      p{
+        color: red;
+      }
+      #stack, #queue{
+        background-color: black;
+        margin-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        border-radius: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+        display: grid;
+        justify-content: center;
+        
+      }
+
+      label{
+        background-color: rgba(0, 0, 0, 0.664);
+        display: flex;
+        justify-content: center;
+        color: white;
+        padding: 10px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        
+      }
+      input{
+        padding: 5px;
+        margin-left: 20px;
+      }
+      /* #queue{
+        background-color: black;
+        margin-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        border-radius: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+        display: grid;
+        justify-content: center;
+      } */
+      #btn{
+        background-color: rgb(194, 39, 39);
+        color: rgb(255, 255, 255);
+        border: 2px solid #810000;
+        padding: 10px;
+        margin-left: 15px;
+        margin-top: 18px;
+        font-size: large;
+        border-radius: 8px;
+        margin-right: 10px;
+      }
+      #send{
+        margin-top: 20px;
+      }
+    </style>
+  </body>
+</html>
