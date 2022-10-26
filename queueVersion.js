@@ -1,14 +1,15 @@
 // Sprint 1 for algorithms class
 // Due October 31st 2022
-// Group members: Chris, Mark, William
+// Group members: Chris, Mark, William, Neil
 
+/* module requirments */
 const fs = require("fs");
 const fsPromises = require("fs").promises;
 const path = require("path");
 
 const Queue = require("./queueClass");
 
-// Request from server.
+/* Agent request queue from server and set fields for future JSON data callback function for those parameters */
 const agentRequestQueue = async (message, agentID, structureID) => {
   let agent = {
     data: message,
@@ -16,16 +17,19 @@ const agentRequestQueue = async (message, agentID, structureID) => {
     StructureID: structureID,
   };
   try {
+    /* this is a try statement */
     if (!fs.existsSync(path.join(__dirname, "json", "queue.json"))) {
       fs.openSync(path.join(__dirname, "json", "queue.json"), "w");
 
-      // Adding to the queue.
+      /* adding to the queue */
       const queue = new Queue.Queue();
 
       queue.enqueue(agent);
 
       console.log("queue items:");
       console.log(queue.items);
+
+      /* Writing the JSON data file */
 
       let messageJSON = JSON.stringify(queue.items, null, 2);
       console.log(messageJSON);
@@ -62,7 +66,7 @@ const agentRequestQueue = async (message, agentID, structureID) => {
   }
 };
 
-// dequeue "data:" out of the queue and from the file.
+/*dequeue "data:" out of the queue and from the file */
 const agentRetrieveQueue = async () => {
   let obj = new Object();
   try {
@@ -80,15 +84,14 @@ const agentRetrieveQueue = async () => {
     obj.AgentID = remove.AgentID;
     obj.StructureID = remove.StructureID;
 
- 
     let newItems = [];
 
     for (let i = queue.lowestCount; i < queue.count; i++) {
       newItems.push(queue.items[i]);
     }
     let messageJSON = JSON.stringify(newItems, null, 2);
-   
 
+    /* write the queue.json file */
     await fsPromises.writeFile(
       path.join(__dirname, "json", "queue.json"),
       messageJSON
@@ -100,6 +103,7 @@ const agentRetrieveQueue = async () => {
   return obj;
 };
 
+/* required module exports for other areas of code */
 module.exports = {
   agentRequestQueue,
   agentRetrieveQueue,

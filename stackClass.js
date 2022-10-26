@@ -1,16 +1,15 @@
 // Sprint 1 for algorithms class
 // Due October 31st 2022
-// Group members: Chris, Mark, William
+// Group members: Chris, Mark, William, Neil
 
-
-// Last in first out (LIFO).
+/* Last in first out (LIFO) */
 class Stack {
   constructor() {
     this.items = [];
     this.count = 0;
   }
 
-  // Adding an element to the stack.
+  /* Adding an element to the stack. */
   push(element) {
     this.items[this.count] = element;
     console.log(`${element} added to position ${this.count}`);
@@ -18,7 +17,7 @@ class Stack {
     return this.count - 1;
   }
 
-  // Removing an element from the back of the stack (Front).
+  /* Removing an element from the back of the stack (Front). */
   pop() {
     if (this.count === 0) {
       return undefined;
@@ -29,17 +28,17 @@ class Stack {
     return deleteItem;
   }
 
-  // Checking the element at the top of the stack.
+  /* Checking the element at the top of the stack. */
   peek() {
     console.log(`The top element is ${this.items[this.count - 1]}`);
     return this.items;
   }
-
+  /* checks to see if stack is empty or not */
   isEmpty() {
     console.log(this.count === 0 ? `stack is empty` : `stack is not empty`);
     return this.count == 0;
   }
-
+  /* converts to string and iterates through items */
   toString() {
     if (this.isEmpty()) {
       return "";
@@ -50,7 +49,7 @@ class Stack {
     }
   }
 }
-
+/* modules for export */
 module.exports = {
   Stack: Stack,
 };

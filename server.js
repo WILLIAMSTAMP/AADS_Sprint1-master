@@ -3,7 +3,6 @@
 // Group members: Chris, Mark, William, Neil
 
 /* required modules for project */
-
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -61,7 +60,7 @@ const server = http.createServer((req, res) => {
     res.write("404 Not Found");
     res.end();
   }
-
+  /* read the file and view in UTF-8 format */
   function displayFile(filename) {
     fs.readFile(filename, "UTF-8", (err, data) => {
       if (err) {
@@ -76,7 +75,7 @@ const server = http.createServer((req, res) => {
     });
   }
 });
-
+/* port the server is listening on and meesage to the console */
 server.listen(port, "localhost", () => {
   console.log(
     `Secure messaging protocal initiated on port ${port}; Terminate connection after briefing to maintain optimal security! `
