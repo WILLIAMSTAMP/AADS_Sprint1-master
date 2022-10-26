@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "data": "hello this is my message for you",
+    "AgentID": "ddddd",
+    "StructureID": "44444"
+  }
+]
