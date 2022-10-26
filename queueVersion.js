@@ -80,7 +80,8 @@ const agentRetrieveQueue = async () => {
     obj.AgentID = remove.AgentID;
     obj.StructureID = remove.StructureID;
 
- 
+
+
     let newItems = [];
 
     for (let i = queue.lowestCount; i < queue.count; i++) {
@@ -88,7 +89,6 @@ const agentRetrieveQueue = async () => {
     }
     let messageJSON = JSON.stringify(newItems, null, 2);
    
-
     await fsPromises.writeFile(
       path.join(__dirname, "json", "queue.json"),
       messageJSON
