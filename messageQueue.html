@@ -1,4 +1,4 @@
- <!-- Sprint 1 for algorithms class
+<!-- Sprint 1 for algorithms class
  Due October 31st 2022
  Group members: Chris, Mark, William, Neil -->
 
@@ -12,11 +12,12 @@
   </head>
   <nav id="navBar">
     <h2>Welcome Back Operative</h2>
-    <h3 style="display: flex; justify-content: center;">Please prepare your secured message Queue below!</h3>
+    <h3 style="display: flex; justify-content: center">
+      Please prepare your secured message Queue below!
+    </h3>
   </nav>
   <body>
     <form id="form" action="/requestQueue">
-      
       <div class="field">
         <label for="username">Message:</label>
         <input
@@ -32,6 +33,8 @@
           type="text"
           name="agentID"
           id="agentID"
+          oninvalid="this.setCustomValidity('Please enter A12345678 format')"
+          pattern="[A-Z]{1}[0-9]{8}"
           placeholder="Enter Your ID"
         />
       </div>
@@ -41,6 +44,8 @@
           type="text"
           name="structureID"
           id="structureID"
+          oninvalid="this.setCustomValidity('Please enter 12345678 format')"
+          pattern="[0-9]{8}"
           placeholder="Current Location Number"
         />
       </div>
@@ -49,7 +54,7 @@
       </div>
     </form>
     <style>
-      #navBar{
+      #navBar {
         color: white;
         background-color: rgba(0, 0, 0, 0.425);
         padding-bottom: 10px;
@@ -57,27 +62,26 @@
         display: grid;
         justify-content: center;
       }
-      h1{
+      h1 {
         display: flex;
         justify-content: center;
         color: red;
         background-color: black;
-        
       }
-      h2{
+      h2 {
         display: flex;
         justify-content: center;
         color: #ee3e3e;
         background-color: black;
       }
 
-      h3{
+      h3 {
         display: flex;
         justify-content: center;
         color: #ee3e3e;
         background-color: black;
       }
-      form{
+      form {
         display: flex;
         justify-content: center;
         margin-top: 350px;
@@ -89,15 +93,16 @@
         background-size: cover;
         padding-top: 25px;
       }
-      
-      body{
+
+      body {
         background-image: url(https://www.spy-games.com/wp-content/uploads/2016/12/cia-wallpaper-free-Download7-1.jpg);
         background-size: cover;
       }
-      p{
+      p {
         color: red;
       }
-      #stack, #queue{
+      #stack,
+      #queue {
         background-color: black;
         margin-right: 20px;
         padding-bottom: 20px;
@@ -107,10 +112,9 @@
         margin-top: 10px;
         display: grid;
         justify-content: center;
-        
       }
 
-      label{
+      label {
         background-color: rgba(0, 0, 0, 0.664);
         display: flex;
         justify-content: center;
@@ -118,9 +122,8 @@
         padding: 10px;
         margin-left: 20px;
         margin-bottom: 10px;
-        
       }
-      input{
+      input {
         padding: 5px;
         margin-left: 20px;
       }
@@ -135,7 +138,7 @@
         display: grid;
         justify-content: center;
       } */
-      #btn{
+      #btn {
         background-color: rgb(194, 39, 39);
         color: rgb(255, 255, 255);
         border: 2px solid #810000;
@@ -146,7 +149,7 @@
         border-radius: 8px;
         margin-right: 10px;
       }
-      #send{
+      #send {
         margin-top: 20px;
       }
     </style>
