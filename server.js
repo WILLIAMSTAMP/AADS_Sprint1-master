@@ -1,6 +1,8 @@
 // Sprint 1 for algorithms class
 // Due October 31st 2022
-// Group members: Chris, Mark, William
+// Group members: Chris, Mark, William, Neil
+
+/* required modules for project */
 
 const http = require("http");
 const fs = require("fs");
@@ -9,12 +11,13 @@ const url = require("url");
 const port = 3000;
 const { agentRequestStack, agentRetrieveStack } = require("./stackVersion");
 const { agentRequestQueue, agentRetrieveQueue } = require("./queueVersion");
-const css = path.dirname("./css")
+const css = path.dirname("./css");
 
-
+/* creating a  http server */
 const server = http.createServer((req, res) => {
   console.log(req.method, req.url);
 
+  /* switch case for selecting different pages */
   if (req.url === "/") {
     let htmlPath = path.join(__dirname, "home.html");
     res.statusCode = 200;
@@ -37,7 +40,7 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify(data, null, 2));
     });
   } else if (req.url === "/sendStack") {
-    let htmlPath = path.join(__dirname, "messageStack.html" ,);
+    let htmlPath = path.join(__dirname, "messageStack.html");
     res.statusCode = 200;
     displayFile(htmlPath);
   } else if (req.url.match("/requestStack")) {
