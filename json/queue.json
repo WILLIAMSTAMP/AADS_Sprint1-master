@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "data": "message 5",
+    "AgentID": "games",
+    "StructureID": "games"
+  }
+]

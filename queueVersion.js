@@ -39,10 +39,8 @@ const agentRequestQueue = async (message, agentID, structureID) => {
       );
 
       let agents = JSON.parse(data);
-
       const queue = new Queue.Queue();
       queue.items = agents;
-
       queue.count = agents.length;
 
       queue.enqueue(agent);
@@ -71,6 +69,7 @@ const agentRetrieveQueue = async () => {
     );
 
     let messages = JSON.parse(data);
+    var lastelement = messages[(messages.length, 1)].data;
     const queue = new Queue.Queue();
     queue.items = messages;
     queue.count = messages.length;
@@ -80,18 +79,21 @@ const agentRetrieveQueue = async () => {
     obj.AgentID = remove.AgentID;
     obj.StructureID = remove.StructureID;
 
-
-
     let newItems = [];
 
     for (let i = queue.lowestCount; i < queue.count; i++) {
       newItems.push(queue.items[i]);
     }
     let messageJSON = JSON.stringify(newItems, null, 2);
-   
+
     await fsPromises.writeFile(
       path.join(__dirname, "json", "queue.json"),
       messageJSON
+    );
+    await fs.writeFileSync(
+      "./queue.html",
+      `<!DOCTYPE html> \n <html lang="en"> \n <head> \n <style> \n #header { \n color: white \n} #top { \n margin-top: 200px; \n } \n table, th, td { \n border: 1px solid white; \n margin-top: 65px; \n color: white; \n margin-left: auto; \n margin-right: auto; \n } \n body { \n background-image: url(https://www.spy-games.com/wp-content/uploads/2016/12/cia-wallpaper-free-Download7-1.jpg); \n background-size: 100%;\n background-position-y: 25%; \n background-color: #1c2c44; \n background-repeat:no-repeat; \n min-width: 70%; \n text-align: center; \n box-sizing: border-box; \n font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; \n } \n </style> \n <title>Node Stuff</title> \n <meta charset="UTF-8" /> \n <meta name="viewport" content="width=device-width,initial-scale=1" /> \n </head> \n <body> \n <header> \n <div id=header style="margin-top:200px;"> \n <span>Keyin College</span> \n <span>Semester 3 Sprint 1 - Full Stack Javascript</span> \n <span>Group 1</span> \n <h1>Queue Search Result:</h1> \n </div> \n </header> \n  <table> \n <tr> \n <th>Message</th> \n <td> +
+    ${lastelement} </td> \n <a href="/"><button>Back to Home</button></a>`
     );
     console.log(`This message has self destructed...goodbye ${obj.AgentID}.`);
   } catch (err) {

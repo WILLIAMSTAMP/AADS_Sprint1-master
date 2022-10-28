@@ -1,7 +1,6 @@
- <!-- Sprint 1 for algorithms class
+<!-- Sprint 1 for algorithms class
  Due October 31st 2022
  Group members: Chris, Mark, William, Neil -->
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,36 +16,36 @@
         <h1>MI5 Private Messaging Board</h1>
       </nav>
     </header>
-      <form>
-        <div id="stack">
-          <p>Message Stack:</p>
-          <a href="/sendStack" id="btn">Create Secured Message</a>
-          <div id="send">
-            <a href="/retrieveStack" id="btn">Retrieve Secured Message</a>
-            
-          </div>
+    <form>
+      <div id="stack">
+        <p>Message Stack:</p>
+        <a href="/sendStack" id="btn">Create Secured Message</a>
+        <div id="send">
+          <a href="/retrieveStack" id="btn">Retrieve Secured Message</a>
         </div>
-        <div id="queue">
-          <p>Message Queue:</p>
-          <a href="/sendQueue" id="btn">Create a Queued Message</a>
-          <div id="send">
-            <a href="/retrieveQueue" id="btn">Retrieve Queued Message</a>
-          </div>
+      </div>
+      <div id="queue">
+        <p>Message Queue:</p>
+        <a href="/sendQueue" id="btn">Create a Queued Message</a>
+
+        <div id="send">
+          <a href="/retrieveQueue" id="btn">Retrieve Queued Message</a>
         </div>
-      </form>
+      </div>
+    </form>
     <style>
-      #navBar{
+      #navBar {
         color: white;
         background-color: black;
         padding-bottom: 10px;
         padding-top: 10px;
       }
-      h1{
+      h1 {
         display: flex;
         justify-content: center;
         color: red;
       }
-      form{
+      form {
         display: flex;
         justify-content: center;
         margin-top: 350px;
@@ -61,16 +60,17 @@
         padding-top: 20px;
         text-decoration: none;
       }
-      body{
+      body {
         background-image: url(https://www.spy-games.com/wp-content/uploads/2016/12/cia-wallpaper-free-Download7-1.jpg);
         background-size: cover;
       }
-      p{
+      p {
         color: red;
         display: flex;
         justify-content: center;
       }
-      #stack, #queue{
+      #stack,
+      #queue {
         background-color: black;
         margin-right: 20px;
         padding-bottom: 20px;
@@ -80,7 +80,6 @@
         margin-top: 10px;
         display: grid;
         justify-content: center;
-        
       }
       /* #queue{
         background-color: black;
@@ -93,7 +92,7 @@
         display: grid;
         justify-content: center;
       } */
-      #btn{
+      #btn {
         background-color: rgb(194, 39, 39);
         color: rgb(255, 255, 255);
         border: 2px solid #810000;
@@ -102,7 +101,7 @@
         display: flex;
         justify-content: center;
       }
-      #send{
+      #send {
         margin-top: 20px;
       }
     </style>
